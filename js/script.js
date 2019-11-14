@@ -1,7 +1,7 @@
 $( "document" ).ready(function() {
   $("button").click(function(){
     let word = $(".input").val();
-    word = word.trim();
+    word = word.replace(/\s/g, '');
     let first = word[0]
     if (first == "a"){
       $(".output").html(word+"ay");
@@ -16,8 +16,9 @@ $( "document" ).ready(function() {
     }
     else{
       let final = word.substring(1,word.length)
-      final = final + word[0]
-    $(".output").html(final+"ay")
+      final = final + word[0] + "ay"
+    $(".output").html(final);
+    console.log(final);
     }
   });
 });
